@@ -33,16 +33,16 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-			// _________________________________________________                                                 _________________________________________________
-			// |       |   Q   |   W   |   F   |   P   |   B   |                                                 |   J   |   L   |   U   |   Y   |   ;   |       |
-			// |       |   A   |   R   |   S   |   F   |   G   |                                                 |   M   |   J   |   K   |   L   |   ;   |       |
-			// |       |   Z   |   X   |   C   |   D   |   V   | L SHIFT | L SHIFT |         | L SHIFT | L SHIFT |   N   |   M   |   ,   |   .   |   /   |       |
-			// ------------------------|  GUI  |  DEL  |  RET  |  SPACE  |   ESC   |         |   RET   |  SPACE  |  TAB  |  BSPC | R-ALT |------------------------
+			// _________________________________________________                                               _________________________________________________
+			// |       |   Q   |   W   |   F   |   P   |   B   |                                               |   J   |   L   |   U   |   Y   |   ;   |       |
+			// |       |   A   |   R   |   S   |LAlt(T)|   G   |________________               ________________|   M   |RCmd(N)|   E   |   I   |   O   |       |
+			// |       |   Z   |   X   |   C   |   D   |   V   |       |       |               |       |       |   K   |   H   |   ,   |   .   |   /   |       |
+			// ------------------------|       |       |  RET  | SPACE |  ESC  |               |  RET  | SPACE |  TAB  |       |       |------------------------
 			bindings = <
-				&none    &kp Q    &kp W    &kp F    &kp P    &kp B                                               &kp J    &kp L    &kp U    &kp Y    &kp SEMI &none
-				&none    &kp A    &kp R    &kp S    &kp F    &kp G                                               &kp M    &kp J    &kp K    &kp L    &kp SEMI &none
-				&none    &kp Z    &kp X    &kp C    &kp D    &kp V    &kp LSHFT &kp LSHFT      &kp LSHFT &kp LSHFT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &none
-				                           &kp LGUI &kp DEL  &kp RET  &kp SPACE &kp ESC        &kp RET  &kp SPACE &kp TAB &kp BSPC &kp RALT
+				&none    &kp Q    &kp W    &kp F    &kp P    &kp B                                                 &kp J    &kp L    &kp U    &kp Y    &kp SEMI &none
+				&none    &kp A    &kp R    &kp S    &hm LALT T &kp G                                               &kp M    &hm RCMD N &kp E  &kp I    &kp O    &none
+				&none    &kp Z    &kp X    &kp C    &kp D    &kp V    &none    &none             &none    &none    &kp K    &kp H    &kp COMMA &kp DOT &kp FSLH &none
+				                           &none    &none    &kp RET  &kp SPACE &kp ESC          &kp RET  &kp SPACE &kp TAB &none    &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
