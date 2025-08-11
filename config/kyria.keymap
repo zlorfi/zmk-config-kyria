@@ -66,12 +66,12 @@
 			// |       |   Q   |   W   |   F   |   P   |   B   |                                               |   J   |   L   |   U   |   Y   |   ;   |       |
 			// |       |   A   |   R   |   S   |LAlt(T)|   G   |________________               ________________|   M   |RCmd(N)|   E   |   I   |   O   |       |
 			// |       |   Z   |   X   |   C   |   D   |   V   |       |       |               |       |       |   K   |   H   |   ,   |   .   |   /   |       |
-			// ------------------------|       |       |  L1+B | ENT+S |  ESC  |               |  RET  | SPACE |  TAB  |       |       |------------------------
+			// ------------------------|       |       |  L1+B | ENT+S |  ESC  |               |  TAB  |  RET  | SPACE |       |       |------------------------
 			bindings = <
 				&none    &kp Q    &kp W    &kp F    &kp P    &kp B                                                 &kp J    &kp L    &kp U    &kp Y    &kp SEMI &none
 				&none    &kp A    &kp R    &kp S    &hm LALT T &kp G                                               &kp M    &hm RCMD N &kp E  &kp I    &kp O    &none
 				&none    &kp Z    &kp X    &kp C    &kp D    &kp V    &none    &none             &none    &none    &kp K    &kp H    &kp COMMA &kp DOT &kp FSLH &none
-				                           &none    &none    &lt 1 BSPC &mt LSHFT ENTER &kp ESC  &sk RSHFT &lt 2 SPACE &kp TAB &none    &none
+				                           &none    &none    &lt 1 BSPC &mt LSHFT ENTER &kp ESC  &kp TAB  &sk RSHFT &lt 2 SPACE  &none    &none
 			>;
 
 			// sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
