@@ -29,6 +29,35 @@
     };
   };
 
+  combos {
+    compatible = "zmk,combos";
+    combo_esc {
+      timeout-ms = <50>;
+      key-positions = <0 1>;
+      bindings = <&kp ESC>;
+    };
+
+    combo_tab {
+      timeout-ms = <50>;
+      key-positions = <10 11>;
+      bindings = <&kp TAB>;
+    };
+
+    // Sticky layer 3
+    combo_l_layer_3 {
+      timeout-ms = <50>;
+      key-positions = <30 31>;
+      bindings = <&sl 3>;
+    };
+
+    // Sticky layer 3
+    combo_r_layer_3 {
+      timeout-ms = <50>;
+      key-positions = <32 33>;
+      bindings = <&sl 3>;
+    };
+  };
+
 	keymap {
 		compatible = "zmk,keymap";
 
@@ -37,15 +66,43 @@
 			// |       |   Q   |   W   |   F   |   P   |   B   |                                               |   J   |   L   |   U   |   Y   |   ;   |       |
 			// |       |   A   |   R   |   S   |LAlt(T)|   G   |________________               ________________|   M   |RCmd(N)|   E   |   I   |   O   |       |
 			// |       |   Z   |   X   |   C   |   D   |   V   |       |       |               |       |       |   K   |   H   |   ,   |   .   |   /   |       |
-			// ------------------------|       |       |  RET  | SPACE |  ESC  |               |  RET  | SPACE |  TAB  |       |       |------------------------
+			// ------------------------|       |       |  L1+B | ENT+S |  ESC  |               |  RET  | SPACE |  TAB  |       |       |------------------------
+			bindings = <
+				&none    &kp Q    &kp W    &kp F    &kp P    &kp B                                                 &kp J    &kp L    &kp U    &kp Y    &kp SEMI &none
+				&none    &kp A    &kp R    &kp S    &hm LALT T &kp G                                               &kp M    &hm RCMD N &kp E  &kp I    &kp O    &none
+				&none    &kp Z    &kp X    &kp C    &kp D    &kp V    &none    &none             &none    &none    &kp K    &kp H    &kp COMMA &kp DOT &kp FSLH &none
+				                           &none    &none    &lt 1 BSPC &mt LSHFT ENTER &kp ESC  &sk RSHFT &lt 2 SPACE &kp TAB &none    &none
+			>;
+
+			// sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+		};
+
+		left_layer {
+			// _________________________________________________                                               _________________________________________________
+			// |       |   !   |   @   |   #   |   $   |   %   |                                               |   ^   |   &   |   '   |   `   |       |       |
+			// |       |   ~   |   +   |   (   |   )   |  COPY |________________               ________________|   |   |   -   |   =   |   _   |   *   |       |
+			// |       |       |  EXT  |   {   |   }   | PASTE |       |       |               |       |       |       |   [   |   ]   |       |   \   |       |
+			// ------------------------|       |       | TRANS | TRANS | TRANS |               |       |       |       |       |       |------------------------
+			bindings = <
+				&none    &kp EXCL &kp AT   &kp HASH &kp DOLLAR &kp PERCENT                                         &kp CARET    &kp AMPS    &kp APOS    &kp GRAVE    &none &none
+				&none    &kp TILDE &kp PLUS &kp LPAR &kp RPAR &kp LG(C)                                            &kp PIPE    &kp MINUS &kp EQUAL  &kp UNDER    &kp STAR    &none
+				&none    &none    &kp LG(X) &kp LBRC &kp RBRC &kp LG(V) &none &none              &none  &none  &none  &kp LBKT &kp RBKT  &none  &kp BSLH  &none
+				                           &none    &none    &trans  &trans &trans               &none  &none  &none  &none    &none
+			>;
+		};
+
+		right_layer {
+			// _________________________________________________                                               _________________________________________________
+			// |       |   !   |   @   |   #   |   $   |   %   |                                               |   ^   |   &   |   '   |   `   |       |       |
+			// |       |   ~   |   +   |   (   |   )   |  COPY |________________               ________________|   |   |   -   |   =   |   _   |   *   |       |
+			// |       |       |  EXT  |   {   |   }   | PASTE |       |       |               |       |       |       |   [   |   ]   |       |   \   |       |
+			// ------------------------|       |       | TRANS | TRANS | TRANS |               |       |       |       |       |       |------------------------
 			bindings = <
 				&none    &kp Q    &kp W    &kp F    &kp P    &kp B                                                 &kp J    &kp L    &kp U    &kp Y    &kp SEMI &none
 				&none    &kp A    &kp R    &kp S    &hm LALT T &kp G                                               &kp M    &hm RCMD N &kp E  &kp I    &kp O    &none
 				&none    &kp Z    &kp X    &kp C    &kp D    &kp V    &none    &none             &none    &none    &kp K    &kp H    &kp COMMA &kp DOT &kp FSLH &none
 				                           &none    &none    &kp RET  &kp SPACE &kp ESC          &kp RET  &kp SPACE &kp TAB &none    &none
 			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 	};
 };
